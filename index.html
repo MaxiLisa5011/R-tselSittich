@@ -79,6 +79,20 @@
         .redeem-link:hover {
             text-decoration: underline;
         }
+        /* Zusätzlich eingefügter Stil für die Bildergalerie */
+        .image-gallery {
+            margin-top: 20px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+        .image-gallery img {
+            width: 100%;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+        }
     </style>
 </head>
 <body>
@@ -90,13 +104,25 @@
         <input type="password" id="passcode" maxlength="8" placeholder="••••••••" inputmode="numeric">
         <button onclick="checkCode()">Bestätigen</button>
 
+        <!-- Zusätzlich eingefügter Galerie-Bereich -->
+        <div class="image-gallery">
+            <img src="IMG_4614.jpg" alt="Hinweis 1">
+            <img src="IMG_4606.jpg" alt="Hinweis 2">
+            <img src="IMG_4607.jpg" alt="Hinweis 3">
+            <img src="IMG_4609.jpg" alt="Hinweis 4">
+            <img src="IMG_4610.jpg" alt="Hinweis 5">
+            <img src="IMG_4611.jpg" alt="Hinweis 6">
+            <img src="IMG_4612.jpg" alt="Hinweis 7">
+            <img src="IMG_4613.jpg" alt="Hinweis 8">
+        </div>
+
         <p id="message"></p>
 
         <!-- Dieser Bereich wird nach richtiger Eingabe angezeigt: -->
         <div id="secret-content">
             <h2>Glückwunsch! 🎉</h2>
             <p>Hier ist dein Roblox Gutschein:</p>
-            <div class="code-display">RBUQ6XE8UA7X7B72</div>
+            <div class="code-display">XXX</div>
             <p>
                 <a class="redeem-link" href="https://www.roblox.com/redeem" target="_blank" rel="noopener noreferrer">
                     Hier Roblox Gutschein einlösen ➔
