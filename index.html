@@ -1,1 +1,130 @@
-'''''
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RätselSittich</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+            background-color: #f4f4f4;
+        }
+        .passcode-box {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            display: inline-block;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            max-width: 400px;
+            width: 90%;
+        }
+        input {
+            font-size: 24px;
+            letter-spacing: 6px;
+            text-align: center;
+            padding: 10px;
+            width: 220px;
+            margin-bottom: 15px;
+            border: 2px solid #ccc;
+            border-radius: 6px;
+        }
+        button {
+            font-size: 18px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            display: block;
+            margin: 0 auto;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #message {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        #secret-content {
+            display: none;
+            margin-top: 25px;
+            padding: 20px;
+            background-color: #e8f5e9;
+            border: 1px solid #4caf50;
+            border-radius: 8px;
+            color: #1b5e20;
+        }
+        .code-display {
+            font-size: 22px;
+            font-weight: bold;
+            background: #ffffff;
+            padding: 10px;
+            border: 2px dashed #4caf50;
+            border-radius: 6px;
+            letter-spacing: 2px;
+            margin: 15px 0;
+            user-select: all;
+        }
+        .redeem-link {
+            display: inline-block;
+            margin-top: 10px;
+            color: #007bff;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        .redeem-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="passcode-box">
+        <h1>RätselSittich</h1>
+        <p>Gib den 8-stelligen Passcode ein:</p>
+        
+        <input type="password" id="passcode" maxlength="8" placeholder="••••••••" inputmode="numeric">
+        <button onclick="checkCode()">Bestätigen</button>
+
+        <p id="message"></p>
+
+        <!-- Dieser Bereich wird nach richtiger Eingabe angezeigt: -->
+        <div id="secret-content">
+            <h2>Glückwunsch! 🎉</h2>
+            <p>Hier ist dein Roblox Gutschein:</p>
+            <div class="code-display">RBUQ6XE8UA7X7B72</div>
+            <p>
+                <a class="redeem-link" href="https://www.roblox.com/redeem" target="_blank" rel="noopener noreferrer">
+                    Hier Roblox Gutschein einlösen ➔
+                </a>
+            </p>
+        </div>
+    </div>
+
+    <script>
+        function checkCode() {
+            // Dein 8-stelliger Passcode für die Freischaltung:
+            const geheimerCode = "58362380"; 
+            
+            const eingabe = document.getElementById("passcode").value;
+            const message = document.getElementById("message");
+            const secretContent = document.getElementById("secret-content");
+
+            if (eingabe === geheimerCode) {
+                message.style.color = "green";
+                message.textContent = "Richtig! Code erfolgreich eingelöst.";
+                secretContent.style.display = "block";
+            } else {
+                message.style.color = "red";
+                message.textContent = "Falscher Code! Versuche es nochmal.";
+                secretContent.style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+</html>
